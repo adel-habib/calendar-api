@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f4bad73dcb56fee5c79fb761db55a90d6612d0f
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -15,3 +18,4 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 .idea
+
