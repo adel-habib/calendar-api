@@ -10,6 +10,9 @@ ENV MYSQL_PASSWORD=test
 ENV MYSQL_ROOT_PASSWORD=test
 ENV LANG=C.UTF-8
 
+ADD scripts/schema.sql /docker-entrypoint-initdb.d/1.init.sql
+ADD scripts/data.sql /docker-entrypoint-initdb.d/2.data.sql
+
 EXPOSE 3306
 
 CMD ["mysqld"]

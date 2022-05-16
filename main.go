@@ -42,7 +42,13 @@ func main() {
 	})
 
 	e.GET("/ping", func(c echo.Context) error {
-
+		sqlq := "INSERT INTO region(name,short_name) VALUES ('EGYPT','EGP')"
+		res, err := db.Exec(sqlq)
+		if err != nil {
+			e.Logger.Warn(err)
+		}
+		fmt.Println(res)
+		fmt.Println("INSERTED INTO DB!")
 		return c.JSON(http.StatusOK, struct{ Status string }{Status: "Something"})
 	})
 

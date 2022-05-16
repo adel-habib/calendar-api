@@ -12,7 +12,7 @@ COPY *.go ./
 
 RUN go build -o /api
 
-COPY init.sh /init.sh
+COPY scripts/init.sh /init.sh
 
 RUN chmod +x /init.sh
 

@@ -3,9 +3,7 @@ services:
   db:
     build:
       context: .
-      dockerfile: mysql.Dockerfile
-    volumes:
-      - ./schema.sql:/docker-entrypoint-initdb.d/init.sql
+      dockerfile: scripts/mysql.Dockerfile
     ports:
       - "3306:3306"
   go:
@@ -13,7 +11,7 @@ services:
       - db
     build:
       context: .
-      dockerfile: go.Dockerfile
+      dockerfile: scripts/go.Dockerfile
     command: /go-rest-api
     volumes:
       - .:/app
