@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    build:
+      context: .
+      dockerfile: mysql.Dockerfile
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+  go:
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: go.Dockerfile
+    command: /go-rest-api
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+
