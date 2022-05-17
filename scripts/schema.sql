@@ -1,8 +1,8 @@
-CREATE TABLE `region`
+CREATE TABLE `regions`
 (
-    `id` bigint PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `id` bigint unsigned PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `name` varchar(255),
     `short_name` varchar(255),
-    `parent_id` bigint
+    `parent_id` bigint unsigned
 );
-ALTER TABLE `region` ADD FOREIGN KEY (`parent_id`) REFERENCES `region` (`id`);
+ALTER TABLE `regions` ADD FOREIGN KEY (`parent_id`) REFERENCES `regions` (`id`);
